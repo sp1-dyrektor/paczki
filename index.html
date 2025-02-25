@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plakat na pełnym ekranie</title>
+    <title>Full HD Video</title>
     <style>
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            overflow: hidden;
         }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
             height: 100vh;
-            background: url('tlo.jpg') no-repeat center center/cover; /* Tło (opcjonalnie) */
-        }
-        .plakat {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <img src="image.jpg" alt="Plakat" class="plakat">
+    <video autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+        Twoja przeglądarka nie obsługuje tagu video.
+    </video>
 </body>
 </html>
